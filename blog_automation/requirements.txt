@@ -1,0 +1,5 @@
+fastapi
+uvicorn[standard]
+requests==2.31.0
+python-dotenv==1.0.0
+# 추가로 필요한 라이브러리가 있다면 여기에 적으세요 (예: pandas, requests 등)

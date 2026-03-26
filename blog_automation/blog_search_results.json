@@ -1,0 +1,27 @@
+[
+  {
+    "url": "https://blog.naver.com/pc0bang/224172578253",
+    "title": "[실전] 코딩 없이 n8n으로... 엔비디아) (부제: 파이썬 몰라도... ",
+    "content": "왜 n8n인가요? (파이썬 vs 노코드) 파이썬: 환경 설정, 라이브러리 설치, 에러 디버깅... 시작하기도 전에 지칩니다. n8n: 선만 연결하면 됩니다. 레고 조립과 같습니다. 우리의 목표는 '프로그래밍 공부'가... "
+  },
+  {
+    "url": "https://blog.naver.com/c_in_/224184007618",
+    "title": "n8n 파이썬 텔레그램 연동 자동화 세팅",
+    "content": "여기서 파이썬을 사용해야 한다 가상환경에서 설치 &quot;&quot; &quot; &quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; 이제 다시 n8n로 돌아간다 이렇게 설정해주면 된다 Send body 체크하고 Name에는 여기서의 task 입력 그리고 Value에서... "
+  },
+  {
+    "url": "https://blog.naver.com/dlabman/223811040739",
+    "title": "n8n에서  파이썬(Python)을 활용하여 데이터파이프라인... ",
+    "content": "이것으로 파이썬과 n8n 을 사용하여 워크플로우 구성하기가 끝이 났습니다. n8n 의 장점을 살리고 만약 워크플로우의 유지보수를 맡은 팀원들이 프로그래밍 지식이 없다면 코드 노드를 사용하기보다는... "
+  },
+  {
+    "url": "https://blog.naver.com/eyjang1998/224145947317",
+    "title": "n8n에서 파이썬(Python)을 활용하는 방법",
+    "content": "n8n을 시작한게 며칠 안되다 보니 기능을 아직 다 모른다. 우연히 발견한 내용인데 나에게는 유익한 내용이라 링크 남겨둔다. https://dlabtech.tistory.com/entry/n8n... "
+  },
+  {
+    "url": "https://blog.naver.com/nsjkim/223948722518",
+    "title": "[알아봅시다] 100% 쇼츠 자동화, make n8n 없어도 파이썬... ",
+    "content": "[알아봅시다] 100% 쇼츠 자동화, make n8n 없어도 파이썬 하나면 끝! https://youtu.be/Roq7oW-Rq8A (00:01) 자동화 플랫폼 대신 파이썬 직접 구현 결심 대부분의 쇼츠... "
+  }
+]

@@ -1,0 +1,23 @@
+name: kurt-n8n  # folder Name
+
+services:
+  python-api: # 추후 http request 주소 eg : http://python-api:8000/user-register
+    build: .
+    image: python_n8n_automation_app:latest #image name
+    container_name: python_n8n_automation   #container_name
+    volumes:
+      - .:/app
+    env_file:
+      - .env  # 환경 변수 파일 로드
+    ports:
+      - "8000:8000"  # 호스트의 8000 포트를 컨테이너의 8000 포트로 매핑
+
+    # 'python -m' 방식을 사용하면 모듈 인식 에러가 거의 발생하지 않습니다.
+    command: python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - n8n_network
+
+networks:
+  n8n_network:
+    external: true
+    name: n8n_demo  # 'docker network ls'에서 확인하신 이름 그대로 사용하세요.

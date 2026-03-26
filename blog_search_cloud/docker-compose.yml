@@ -1,0 +1,23 @@
+  
+services:
+  python_app:
+    build: .
+    container_name: python_blog_search   #container_name
+    restart : always
+    env_file:
+      - .env  # 환경 변수 파일 로드
+    ports:
+      - "5005:5000"  # 앞의 숫자(호스트)를 5005로 변경, 뒤의 숫자(컨테이너)는 5000으로 유지
+    command: python -m uvicorn main:app --host 0.0.0.0 --port 5000 --reload
+    networks:
+      - n8n_network
+
+networks:
+  n8n_network:
+    external: true
+
+
+
+
+
+
