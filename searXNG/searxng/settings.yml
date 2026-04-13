@@ -1,0 +1,47 @@
+use_default_settings: true
+
+server:
+  secret_key: "n8n-personal-searxng-secret"
+  limiter: false
+  image_proxy: false
+  bind_address: "0.0.0.0"
+
+engines:
+  # 구글 활성화
+  - name: google
+    engine: google
+    categories: general
+    disabled: false
+
+  # 빙 활성화
+  - name: bing
+    engine: bing
+    categories: general
+    disabled: false
+
+  # 구글 뉴스
+  - name: google news
+    engine: google_news
+    categories: news
+    disabled: false
+
+  # 빙 뉴스
+  - name: bing news
+    engine: bing_news
+    categories: news
+    disabled: false
+
+  # 덕덕고 (기본 비활성이면 명시적으로 켜기)
+  - name: duckduckgo
+    engine: duckduckgo
+    categories: general
+    disabled: false
+
+search:
+  formats:
+    - html
+    - json
+    
+    
+    
+    
