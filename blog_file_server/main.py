@@ -4,12 +4,18 @@ FastAPI 파일 서버
 - 파일 다운로드 (/files/{파일명} 또는 /view/{파일명})
 """
 
+import os
 import uuid
 from pathlib import Path
 
 import httpx
-from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from dotenv import load_dotenv
+from fastapi import FastAPI, File, Form, Header, HTTPException, UploadFile
 from fastapi.responses import FileResponse
+
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY", "")
 
 # FastAPI 앱 인스턴스 생성
 app = FastAPI()
@@ -40,8 +46,9 @@ def make_unique_filename(original_name: str) -> str:
 # -------------------------------------------------------
 @app.post("/upload")
 async def upload(
-    file: UploadFile = File(None),  # 직접 파일을 전송하는 경우 (선택)
-    url: str = Form(None),          # URL을 전달하여 다운로드하는 경우 (선택)
+    file: UploadFile = File(None),
+    url: str = Form(None),
+    x_api_key: str = Header(None),
 ):
     """
     파일을 업로드합니다.
@@ -52,6 +59,9 @@ async def upload(
 
     저장 시 중복을 방지하기 위해 UUID 기반 랜덤 파일명으로 저장됩니다.
     """
+
+    if x_api_key != API_KEY:
+        raise HTTPException(status_code=401, detail="인증 실패: API Key가 올바르지 않습니다.")
 
     # file도 url도 전달되지 않은 경우 에러 반환
     if not file and not url:

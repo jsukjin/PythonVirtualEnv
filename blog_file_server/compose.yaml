@@ -1,6 +1,0 @@
-services:
-  blogfileserver:
-    image: blogfileserver
-    build:
-      context: .
-      dockerfile: ./Dockerfile
