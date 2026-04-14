@@ -11,8 +11,9 @@ services:
       - PYTHONUNBUFFERED=1    # 파이썬 로그를 실시간으로 출력
     restart: unless-stopped   # 컨테이너가 종료되면 자동 재시작 (수동 중지 제외)
     networks:
-      - n8n_personal          # n8n하고 network를 맞춰준다
+      - nginx-proxy          # n8n하고 network를 맞춰준다
     
 networks:
-  n8n_personal:               # n8n하고 network를 맞춰준다
+  nginx-proxy:
     external: true
+    name: nginx-proxy-manager_default
