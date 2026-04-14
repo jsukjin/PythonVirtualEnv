@@ -1,0 +1,18 @@
+services:
+  file_server:
+    build: .                  # 현재 폴더의 Dockerfile로 이미지 빌드
+    ports:
+      - "9997:8001"           # 외부 접속 포트 9997 → 컨테이너 내부 포트 8000
+    volumes:
+      - .:/app                # 소스코드 폴더를 컨테이너에 마운트
+                              # → 파이썬 파일 수정 시 도커 재시작 없이 즉시 반영 (--reload)
+      - /app/__pycache__      # 캐시 폴더는 컨테이너 내부에서만 관리
+    environment:
+      - PYTHONUNBUFFERED=1    # 파이썬 로그를 실시간으로 출력
+    restart: unless-stopped   # 컨테이너가 종료되면 자동 재시작 (수동 중지 제외)
+    networks:
+      - n8n_personal          # n8n하고 network를 맞춰준다
+    
+networks:
+  n8n_personal:               # n8n하고 network를 맞춰준다
+    external: true

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Github/PythonVirtualEnv/blog_automation//**)",
+      "Read(//c/Github/PythonVirtualEnv/blog_search_seflhost//**)",
+      "Read(//c/Github/PythonVirtualEnv/blog_automation_prompt//**)",
+      "Read(//c/Github/PythonVirtualEnv/blog_automation_prompt/**)"
+    ]
+  }
+}
