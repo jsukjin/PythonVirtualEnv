@@ -138,7 +138,7 @@ async def download_by_files(filename: str):
 @app.get("/view/{filename}")
 async def download_by_view(filename: str):
     """
-    /view/{파일명} 경로로 파일을 다운로드합니다.
+    /view/{파일명} 경로로 브라우저에서 파일을 직접 표시합니다.
     예) GET /view/a3f2c1d4e5.jpg
     """
     # 경로 조작 공격 방지
@@ -150,4 +150,4 @@ async def download_by_view(filename: str):
     if not file_path.exists():
         raise HTTPException(status_code=404, detail="파일을 찾을 수 없습니다.")
 
-    return FileResponse(path=file_path, filename=filename)
+    return FileResponse(path=file_path)
