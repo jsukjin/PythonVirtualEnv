@@ -1,0 +1,17 @@
+# 환경변수 (절대 커밋 금지)
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# 가상환경
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/

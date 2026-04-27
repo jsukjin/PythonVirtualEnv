@@ -1,0 +1,27 @@
+{
+  "name": "PythonVirtualEnv",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/workspace",
+
+  // ✅ Windows 폴더 ↔ 컨테이너 /workspace 실시간 동기화 (bind mount)
+  // 이 설정이 없으면 Docker named volume이 생성되어 Windows 파일 수정이 컨테이너에 반영 안 됨
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+
+  "forwardPorts": [5001],
+  "postCreateCommand": "echo 'conda activate PythonVirtualEnv' >> ~/.bashrc",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/envs/PythonVirtualEnv/bin/python"
+      }
+    }
+  }
+}
